@@ -13,22 +13,22 @@ identifier	[a-zA-Z][a-zA-Z0-9_]*
 whitespace [ \t\n]+ 	
 %%
 {whitespace}
-{comment}+.*{comment}*  {printf("Comments : %s\n",yytext);}
-["].*["] {printf("String literal : %s \n",yytext);}
-['].['] {printf("Character : %s \n",yytext);}
+{comment}+.*{comment}*  {printf("Comments : %s  \n ",yytext);}
+["].*["] {printf("String literal : %s  \n",yytext);}
+['].['] {printf("Character : %s  \n",yytext);}
 ;|,|"."|":"
-#[a-zA-Z0-9]+{whitespace}(<[a-zA-Z0-9"."]+>|[a-zA-Z0-9]*) {printf("Preprocessors : %s \n", yytext);}
-"+"+|"-"+|"*"|"/"|"%" {printf("Arithmetic opertor : %s \n",yytext);}
-"=="|">="|"<="|"!="|">"|"<" {printf("Relational operator : %s \n",yytext);}
-"&&"|"||"|"!" {printf("Logical operator : %s \n", yytext);}
-"&"|"|"|"<<"|"~"|">>"|"^" {printf("Bitwise operator : %s \n", yytext);}
-("+"|"-"|"%"|"/"){0,1}"=" {printf("Assignment operator : %s \n", yytext);}
-{keywords} {printf("Keyword : %s \n", yytext);}
-{identifier} {printf("Identifier : %s \n", yytext);}
-{digit}+ {printf("Integer constant : %d \n", atoi(yytext));}
-{digit}+.{digit}+ {printf("Float constant : %f \n", atof(yytext));}
+#[a-zA-Z0-9]+{whitespace}(<[a-zA-Z0-9"."]+>|[a-zA-Z0-9]*) {printf("Preprocessors : %s  \n", yytext);}
+"+"+|"-"+|"*"|"/"|"%" {printf("Arithmetic opertor : %s  \n",yytext);}
+"=="|">="|"<="|"!="|">"|"<" {printf("Relational operator : %s  \n",yytext);}
+"&&"|"||"|"!" {printf("Logical operator : %s  \n", yytext);}
+"&"|"|"|"<<"|"~"|">>"|"^" {printf("Bitwise operator : %s  \n", yytext);}
+("+"|"-"|"%"|"/"){0,1}"=" {printf("Assignment operator : %s  \n", yytext);}
+{keywords} {printf("Keyword : %s  \n", yytext);}
+{identifier} {printf("Identifier : %s  \n", yytext);}
+{digit}+ {printf("Integer constant : %d  \n", atoi(yytext));}
+{digit}+.{digit}+ {printf("Float constant : %f  \n", atof(yytext));}
 ("{"|"}"|"["|"]"|"("|")")+ 
-"/n" 
+"/n" {yylineno++;}
 %%
 
 /*** C Code section ***/
