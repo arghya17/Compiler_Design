@@ -1964,7 +1964,7 @@ void yyfree (void * ptr )
 void main(int argc, char ** argv)
 {   
     if (argc==2){
-        yyin=fopen(argv[1],"r");
+        yin=fopen(argv[1],"r");
     }
     else{
         printf("Enter expression to be evaluated : ");
