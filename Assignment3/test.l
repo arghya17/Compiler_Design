@@ -3,6 +3,7 @@ digit       [0-9]
 identifier  [a-zA-Z_][a-zA-Z0-9_]*
 intconst    [+\-]?{digit}+
 floatconst  [+\-]?{digit}*\.{digit}+(e[+\-]?{digit}+)?
+includefiles {letter}+\.[{letter}+\.]*\.h
 charconst   \'{letter}\'
 stringconst \".*\"
 delimiter   [ \t]

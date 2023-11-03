@@ -13,7 +13,7 @@ int add(int n, int m)
 
 int main()
 {
-    int a = 10;
+    itn a = 10;
     float b = (a + 10.0) * 100;
     char c = 'a';
     c = 'b';

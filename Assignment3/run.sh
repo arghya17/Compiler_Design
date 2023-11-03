@@ -11,5 +11,7 @@ echo gcc compilation done below
 gcc y.tab.c -o test
 
 echo syntax analysis of the code below
-
+echo 
+echo --------------------------------------------------------
+echo 
 ./test < code.c
